@@ -99,3 +99,29 @@ let hello = function () {
     }
     console.log("after bubble sort "+arr)
 }()
+
+console.log("Ngày "+new Date() + " viêt thuật toán selection sort");
+
+let selectionSort = function() {
+  let arr = [23, 1, 10, 5, 6];
+  const n = arr.length;
+  let index = 0;
+  let lowestValue = 0 ;
+  for (let i = 0; i < n ; i++) {
+    lowestValue = arr[i];
+    index = i;
+    for (let j = i+1; j < n; j++) {
+       if(arr[j] < lowestValue){
+        lowestValue = arr[j];
+        index = j;
+       }
+    }
+
+    if(index != i){
+      arr[index] = arr[i];
+      arr[i] = lowestValue;
+    }
+   
+  }
+  console.log("after selection sort "+arr)
+}();
